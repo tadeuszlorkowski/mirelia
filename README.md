@@ -1376,7 +1376,7 @@ objects | MireliaAnimation | The new animation.
 Overwrites the animation of the blueprint.
 
 ```javascript
-blueprint.alterHitboxRect(w, h)
+blueprint.alterHitboxRect(w, h, group)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
@@ -1388,7 +1388,7 @@ Returns none.
 Overwrites the rectangular hitbox of the blueprint.
 
 ```javascript
-blueprint.alterHitboxCircle(d)
+blueprint.alterHitboxCircle(d, group)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
