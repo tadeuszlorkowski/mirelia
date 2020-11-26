@@ -643,7 +643,7 @@ title | string | The title of the new heading.
 content | string | The content of the new paragraph.
 
 Returns none.
-Writes a new heading and paragraph. If the number does not fit, it defaults fo h6.
+Writes a new heading and paragraph. If the number does not fit, it defaults to h6.
 
 ```javascript
 Mirelia.createHeading(size, title, content)
@@ -1876,7 +1876,7 @@ During its execution, the following things will happen in this specified order:
 7. The MireliaSessions will check if they didn't expire.
 8. The MireliaMissions updates will happen.
 9. The MireliaComponents updates will happen.
-10. The application background update will be happen.
+10. The application background update will happen.
 
 The application loop should be called as the **LAST** snippet of the page's JavaScript, and is called simply by typing
 ```javascript
