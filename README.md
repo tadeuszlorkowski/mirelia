@@ -10,7 +10,7 @@ for component site building, session control, real-time site update and HTML5 ga
 ## From the EPEJSODION Online website
 
 In order to use the script without download, all you need to do is to add the script from the EPEJSODION Online page, by setting
-it as the script's source between the <head> tags of the site's HTML document:
+it as the script's source in a script element between the head tags of the site's HTML document:
 
 ```html
 <script src="http://www.epejsodion.com/mirelia.js"></script>
@@ -22,7 +22,7 @@ Online page and is automatically updated. However, if EPEJSODION Online is down,
 ## Stand-alone
 
 Mirelia can also be added to your site by downloading the source code and adding it to your page's files, and then adding it as a
-script between the <head> tags:
+script in a script element between the head tags.
 
 ```html
 <script src="mirelia.js"></script>
@@ -116,17 +116,17 @@ Mirelia.setCanvas(id)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-id | string | The id of the <canvas> HTML tag.
+id | string | The id of the canvas HTML tag.
 
 Returns none.
-Sets the default canvas for drawing. Takes the <canvas> tag's ID.
+Sets the default canvas for drawing. Takes the canvas tag's ID.
 
 ```javascript
 Mirelia.circle(canvas, x, y, diameter, color)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
 diameter | number | The diameter of the circle.
@@ -140,7 +140,7 @@ Mirelia.ring(canvas, x, y, diameter, thickness, color)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
 diameter | number | The diameter of the ring.
@@ -155,10 +155,10 @@ Mirelia.sprite(canvas, x, y, image)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
-image | <img> element | The image, stored in a variable.
+image | img element | The image, stored in a variable.
 
 Returns none.
 Draws an image on the canvas.
@@ -168,12 +168,12 @@ Mirelia.spriteStretch(canvas, x, y, w, h, image)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
 w | number | Width in pixels.
 h | number | Height in pixels.
-image | <img> element | The image, stored in a variable.
+image | img element | The image, stored in a variable.
 
 Returns none.
 Draws a stretched image on the canvas.
@@ -183,7 +183,7 @@ Mirelia.spritePartial(canvas, x, y, xp, yp, w, h, image)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
 xp | number | x position on the image to cut from.
@@ -200,11 +200,11 @@ Mirelia.spriteRotated(canvas, x, y, rotation, image)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
 rotation | number | The rotation of the image in degrees.
-image | <img> element | The image, stored in a variable.
+image | img element | The image, stored in a variable.
 
 Returns none.
 Draws a rotated image on the canvas.
@@ -214,13 +214,13 @@ Mirelia.spriteTransform(canvas, x, y, width, height, rotation, image)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
 w | number | Part width in pixels.
 h | number | Part height in pixels.
 rotation | number | The rotation of the image in degrees.
-image | <img> element | The image, stored in a variable.
+image | img element | The image, stored in a variable.
 Returns none.
 Draws a rotated and stretched image on the canvas.
 
@@ -229,7 +229,7 @@ Mirelia.spriteComplete(canvas, x, y, width, height, xp, yp, wp, hp, rotation, im
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 x | number | x position on the canvas.
 y | number | y position on the canvas.
 w | number | Part width in pixels.
@@ -239,7 +239,7 @@ yp | number | y position on the image to cut from.
 wp | number | Part width in pixels.
 hp | number | Part height in pixels.
 rotation | number | The rotation of the image in degrees.
-image | <img> element | The image, stored in a variable.
+image | img element | The image, stored in a variable.
 
 Returns none.
 Draws a rotated and stretched part of an image on the canvas.
@@ -249,7 +249,7 @@ Mirelia.drawText(canvas, font, text, x, y, align)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 font | string | The font of the text, in HTML style (e. g. "32px Arial").
 text | string | The string to be drawn.
 x | number | x position on the canvas.
@@ -264,7 +264,7 @@ Mirelia.drawTextColor(canvas, font, text, x, y, color, align)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 font | string | The font of the text, in HTML style (e. g. "32px Arial").
 text | string | The string to be drawn.
 x | number | x position on the canvas.
@@ -280,7 +280,7 @@ Mirelia.drawTextStroke(canvas, font, text, x, y, align)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 font | string | The font of the text, in HTML style (e. g. "32px Arial").
 text | string | The string to be drawn.
 x | number | x position on the canvas.
@@ -295,7 +295,7 @@ Mirelia.drawTextStrokeColor(canvas, font, text, x, y, color, align)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 font | string | The font of the text, in HTML style (e. g. "32px Arial").
 text | string | The string to be drawn.
 x | number | x position on the canvas.
@@ -311,7 +311,7 @@ Mirelia.drawProgBar(canvas, horizontal, color1, color2, x, y, length, width, pro
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 horizontal | boolean | If true, the bar will appear horizontally, and if false - vertically.
 color1 | string | The hex color string of the progress.
 color2 | string | The hex color string of the outline.
@@ -329,7 +329,7 @@ Mirelia.refresh(canvas)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The id of the <canvas> HTML tag.
+canvas | string | The id of the canvas HTML tag.
 
 Returns none.
 Prepares the canvas for re-drawing objects. Must be used in loops. It is auto-called each frame of
@@ -340,7 +340,7 @@ Mirelia.setBackground(image)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-image | <img> element | The image, stored in a variable.
+image | img element | The image, stored in a variable.
 
 Returns none.
 Sets a default background image to be drawn on the canvas, on condition a default canvas is set.
@@ -357,7 +357,7 @@ Mirelia.playSound(sound)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 
 Returns none.
 Plays or unpauses the sound stored in the variable.
@@ -367,7 +367,7 @@ Mirelia.pauseSound(sound)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 
 Returns none.
 Pauses the sound stored in the variable.
@@ -377,7 +377,7 @@ Mirelia.pauseSound(sound, replay)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 replay | boolean | If true, the sound will start playing all over again.
 
 Returns none.
@@ -388,7 +388,7 @@ Mirelia.soundIsPlaying(sound)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 
 Returns boolean.
 Checks if the tested audio is currnetly playing.
@@ -398,7 +398,7 @@ Mirelia.soundLoop(sound, replay)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 replay | boolean | If true, the sound will start playing all over again.
 
 Returns none.
@@ -409,7 +409,7 @@ Mirelia.soundPos(sound)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 
 Returns number.
 Gets the current position of a sound.
@@ -419,7 +419,7 @@ Mirelia.soundJump(sound, time)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 time | number | Time in seconds of the sound to jump to.
 
 Returns none.
@@ -431,7 +431,7 @@ Mirelia.soundVolume(sound, volume)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-sound | <audio> element | The sound, stored in a variable.
+sound | audio element | The sound, stored in a variable.
 volume | number | The new volume of the track. (0-1)
 
 Returns none.
@@ -524,7 +524,7 @@ Mirelia.getMousePos(canvas)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The ID of the <canvas> HTML tag.
+canvas | string | The ID of the canvas HTML tag.
 
 Returns dictionary {x: number, y:number}.
 Gets the mouse position in the selected condo as a dictionary of x,y coordinates.
@@ -664,7 +664,7 @@ Parameter | Type | Description
 ------------ | ------------- | -------------
 id | string | The ID of the new button.
 text | string | The display text of the new button.
-image | <img> element | The image of the new button. Type null for none.
+image | img element | The image of the new button. Type null for none.
 
 Returns none.
 Writes a new button.
@@ -713,7 +713,7 @@ Parameter | Type | Description
 id | string | The ID of the new image.
 path | string | The path of the new image.
 
-Returns <img> element.
+Returns img element.
 Adds a new hidden image and returns it.
 
 ```javascript
@@ -725,7 +725,7 @@ id | string | The ID of the new image.
 path | string | The path of the new image.
 loop | boolean | If it is true, the sound will loop.
 
-Returns <audio> element.
+Returns audio element.
 Adds a new hidden sound and returns it.
 
 ```javascript
@@ -759,7 +759,7 @@ width | number | The width of the new include.
 height | number | The height of the new include.
 
 Returns none.
-Creates an <iframe> element and loads a HTML document into it.
+Creates an iframe element and loads a HTML document into it.
 
 ```javascript
 Mirelia.reinclude(id, path)
@@ -770,7 +770,7 @@ id | string | The ID of an include.
 path | string | The path of the new HTML document.
 
 Returns none.
-Assigns a new HTML document to an <iframe> element.
+Assigns a new HTML document to an iframe element.
 
 ```javascript
 Mirelia.redirect(url, newtab)
@@ -897,21 +897,19 @@ Mirelia.Schemes is a dictionary of HTML tags, stored as strings.
 
 Name | String | HTML Tag
 ------------ | ------------- | ------------- 
-Mirelia.Elements.div | "div" | <div>
-d | "div" | <div>
-b | "b" | <b>
-bold | "b" | <b>
-i | "i" | <i>
-italic | "i" | <i>
-u | "u" | <u>
-underline | "u" | <u>
-s | "s" | <s>
-strike | "s", | <s>
-canvas | "canvas" | <canvas>
-table | "table" | <table>
-tr | "tr" | <tr>
-td | "td" | <tf>
-a | "a" | <a>
+Mirelia.Elements.Mirelia.Elements.div | "div" | div
+d | "div" | div
+Mirelia.Elements.b | "b" | b
+Mirelia.Elements.bold | "b" | b
+Mirelia.Elements.i | "i" | i
+Mirelia.Elements.italic | "i" | i
+Mirelia.Elements.u | "u" | u
+Mirelia.Elements.underline | "u" | u
+Mirelia.Elements.s | "s" | s
+Mirelia.Elements.strike | "s", | s
+Mirelia.Elements.canvas | "canvas" | canvas
+Mirelia.Elements.table | "table" | table
+Mirelia.Elements.a | "a" | a
 
 # Mirelia Resource Classes
 
@@ -931,7 +929,7 @@ animation = new MireliaAnimation(images)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-images | List of <img> elements | The images to show.
+images | List of img elements | The images to show.
 
 This will create a new MireliaAnimation with a list of images.
 
@@ -969,7 +967,7 @@ animation.alter(images)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-images | List of <img> elements | The new images to show.
+images | List of img elements | The new images to show.
 
 Returns none.
 This will overwrite the MireliaAnimation's list of images.
@@ -979,7 +977,7 @@ animation.play(canvas, x, y, play, speed)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The ID of the <canvas> element.
+canvas | string | The ID of the canvas element.
 x | number | The x position to draw the animation on.
 y | number | The y position to draw the animation on.
 play | boolean | Type true to play or false not to play.
@@ -993,7 +991,7 @@ animation.play(canvas, x, y, w, h, play, speed)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | string | The ID of the <canvas> element.
+canvas | string | The ID of the canvas element.
 x | number | The x position to draw the animation on.
 y | number | The y position to draw the animation on.
 w | number | The width of the animation.
@@ -1012,7 +1010,7 @@ gameObject = new MireliaGameObject(awake, canvas)
 Parameter | Type | Description
 ------------ | ------------- | -------------
 awake | boolean | Does the object start functioning from the beginning?
-canvas | <canvas> element | The canvas to bind the object to.
+canvas | canvas element | The canvas to bind the object to.
 
 This will create a new MireliaGameObject.
 
@@ -1129,7 +1127,7 @@ Parameter | Type | Description
 ------------ | ------------- | -------------
 x | number | The difference of the object's x position and the image's x position.
 y | number | The difference of the object's y position and the image's y position.
-image | <img> element | The image to draw.
+image | img element | The image to draw.
 
 Returns none.
 Draws a new image with its position relative to the object's (x,y) position.
@@ -1178,7 +1176,7 @@ gameObject.setCanvas(canvas)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-canvas | <canvas> element | The new canvas to bind the object to.
+canvas | canvas element | The new canvas to bind the object to.
 
 Returns none.
 Sets or overwrites the object's canvas.
@@ -1280,7 +1278,7 @@ gameScene = new MireliaGameScene(objects, background, speed)
 Parameter | Type | Description
 ------------ | ------------- | -------------
 objects | MireliaGameObject list | The list of objects to become awake.
-background | <img> element | The new background image.
+background | img element | The new background image.
 speed | number | The speed of the room, 60/speed frames per second.
 
 This will create a new MireliaGameScene. All MireliaGameObject and their derivatives on the list will become awake and the ones not
@@ -1884,7 +1882,7 @@ The application loop should be called as the **LAST** snippet of the page's Java
 ```javascript
 __APPLICATIONLOOP(0)
 ```
-into the definitive <script> element.
+into the definitive script element.
 
 ## Application content
 
@@ -1937,15 +1935,15 @@ Just like the Application loop, it should be called as the **LAST** snippet of t
 ```javascript
 STEM()
 ```
-into the definitive <script> element. Another Application Loop should **NOT** be called.
-This will write the stem as the next HTML element, as an <iframe> inside an unstyled <div>.
-From now on, only HTML (except for the <script> tags) may be written.
+into the definitive script element. Another Application Loop should **NOT** be called.
+This will write the stem as the next HTML element, as an iframe inside an unstyled div.
+From now on, only HTML (except for the script tags) may be written.
 
 ## Stem class
 
 There is a static class which manages the application stem, called simply Stem. It has a few methods used to manage the application stem.
 **WARNING: These changes should not be called in the frame updates, as this would lead to massive slowdowns and ugly effects.**
-**They also may not be called directly from the <script> tags, as the stem is defined as the last function.**
+**They also may not be called directly from the script tags, as the stem is defined as the last function.**
 
 ```javascript
 Stem.set(file)
