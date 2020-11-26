@@ -1,6 +1,6 @@
 # What is Mirelia?
 
-Mirelia is an open-source micro-framework for web development, available for use wiht or without download. It can be used
+Mirelia is an open-source micro-framework for web development, available for use with or without download. It can be used
 for component site building, session control, real-time site update and HTML5 game development. It only uses JavaScript.
 
 [Example game made with Mirelia](http://www.epejsodion.com/swimming-game)
@@ -34,7 +34,7 @@ Online's health.
 If the script is added sucessfully, you should see the following in the console.
 
 ```
-Mirelia 1.0 (C) year Tadeusz Lorkowski. Last update last update
+Mirelia version (C) year Tadeusz Lorkowski. Last update last update
 This is an open source framework. Feel free to customize it to your liking.
 ```
 
