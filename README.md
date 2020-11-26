@@ -38,7 +38,7 @@ Mirelia 1.0 (C) year Tadeusz Lorkowski. Last update last update
 This is an open source framework. Feel free to customize it to your liking.
 ```
 
-# sage
+# Usage
 
 The usage of the framework very simple and uses only JavaScript, and makes it possible to fit the entire webpage's content into a single page,
 while loading only the resources you need.
