@@ -373,7 +373,7 @@ Returns none.
 Pauses the sound stored in the variable.
 
 ```javascript
-Mirelia.pauseSound(sound, replay)
+Mirelia.stopSound(sound, replay)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
@@ -467,7 +467,7 @@ Returns none.
 Sets the default canvas camera by (x,y) immediately.
 
 ```javascript
-Mirelia.resetCam(x, y)
+Mirelia.resetCam()
 ```
 Returns none.
 Sets the default canvas camera back to (0,0).
@@ -559,7 +559,7 @@ Mirelia.sum(list)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-list | number list | The list to be sorted.
+list | number list | The list to sum.
 
 Returns number.
 Sums all elements of the passed list.
@@ -569,9 +569,9 @@ Mirelia.sumPart(list, start, end)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-list | number list | The list to be sorted.
-start | number | The first index of the sorting range.
-end | number | The last index of the sorting range.
+list | number list | The list to sum.
+start | number | The first index of the summing range.
+end | number | The last index of the summing range.
 
 Returns number.
 Sums all elements of the passed list, in a set range. If end is higher than the list length, it will
@@ -592,7 +592,7 @@ Mirelia.randomIntRange(min, max)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-max | number | The minimum number.
+min | number | The minimum number.
 max | number | The maximum number.
 
 Returns number.
@@ -603,7 +603,7 @@ Mirelia.randomRange(min, max)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-max | number | The minimum number.
+min | number | The minimum number.
 max | number | The maximum number.
 
 Returns number.
@@ -632,18 +632,6 @@ Converts degrees to radians.
 ## Mirelia Web DOM Methods
 
 These methods deal with the site's design and loading "invisible" resources for canvas applications.
-
-```javascript
-Mirelia.createHeading(size, title, content)
-```
-Parameter | Type | Description
------------- | ------------- | -------------
-size | number | The size of the new paragraph (1-6).
-title | string | The title of the new heading.
-content | string | The content of the new paragraph.
-
-Returns none.
-Writes a new heading and paragraph. If the number does not fit, it defaults to h6.
 
 ```javascript
 Mirelia.createHeading(size, title, content)
@@ -897,8 +885,8 @@ Mirelia.Schemes is a dictionary of HTML tags, stored as strings.
 
 Name | String | HTML Tag
 ------------ | ------------- | ------------- 
-Mirelia.Elements.Mirelia.Elements.div | "div" | div
-d | "div" | div
+Mirelia.Elements.div | "div" | div
+Mirelia.Elements.d | "div" | div
 Mirelia.Elements.b | "b" | b
 Mirelia.Elements.bold | "b" | b
 Mirelia.Elements.i | "i" | i
@@ -906,7 +894,7 @@ Mirelia.Elements.italic | "i" | i
 Mirelia.Elements.u | "u" | u
 Mirelia.Elements.underline | "u" | u
 Mirelia.Elements.s | "s" | s
-Mirelia.Elements.strike | "s", | s
+Mirelia.Elements.strike | "s" | s
 Mirelia.Elements.canvas | "canvas" | canvas
 Mirelia.Elements.table | "table" | table
 Mirelia.Elements.a | "a" | a
@@ -1226,7 +1214,7 @@ Returns none.
 Sets the object's hitbox to a circle.
 
 ```javascript
-gameObject.setHitboxGroup(gropu)
+gameObject.setHitboxGroup(group)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
@@ -1342,7 +1330,7 @@ x | number | The new x position.
 y | number | The new y position.
 xspeed | number | The new horizontal speed.
 yspeed | number | The new vertical speed.
-objects | MireliaAnimation | The new animation.
+animation | MireliaAnimation | The new animation.
 
 Overwrites attributes of the blueprint, excluding the hitbox.
 
@@ -1371,7 +1359,7 @@ blueprint.alterAnimation(animation)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-objects | MireliaAnimation | The new animation.
+animation | MireliaAnimation | The new animation.
 
 Overwrites the animation of the blueprint.
 
@@ -1399,7 +1387,7 @@ Returns none.
 Overwrites the circular hitbox of the blueprint.
 
 ```javascript
-blueprint.removeHitbox(d)
+blueprint.removeHitbox()
 ```
 Returns none.
 Removes hitbox of the blueprint.
@@ -1499,12 +1487,12 @@ Fires every frame if the session is active.
 ```javascript
 authOk()
 ```
-Fires once when the blueprint is created.
+Fires when the authentication succeds.
 
 ```javascript
 authFail()
 ```
-Fires once when the blueprint is created.
+Fires when the authentication fails.
 
 ## Methods
 
@@ -1539,7 +1527,7 @@ Returns none.
 Overwrites the maximum time by the new value in minutes.
 
 ```javascript
-session.resetTime(time)
+session.resetTime()
 ```
 
 Returns none.
@@ -1596,6 +1584,7 @@ visible | boolean | If true, the component will be visible from the very beginni
 
 The MireliaComponents are groups of multiple HTML elements with events and references. New elements can be added
 or deleted on the go.
+**Please note that you may want to delete components from memory. Do not use var. It will make it impossible to delete the components.**
 
 ## Events
 
@@ -1686,10 +1675,10 @@ Removes the component safely from the memory, and the instance list (simply usin
 Also fires destroyed(). Cannot be used with components declared with var.
 
 
-# MireliaAnimation
+# MireliaMission
 
 ```javascript
-mission = new MireliaAnimation(functions, parameters)
+mission = new MireliaMission(functions, parameters)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
@@ -1844,7 +1833,7 @@ mission.append(function, parameters)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
-functions | function | The function or method to execute to append.
+function | function | The function or method to execute to append.
 parameters | list | The list of arguments for the function or method to overwrite. If the function or method doesn't take them, type null.
 
 Returns none.
