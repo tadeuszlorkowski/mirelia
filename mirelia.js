@@ -134,7 +134,7 @@ class G13653FASBX35B1ZX3B54 {
 		this.appCreator = a4;
 		this.appVersion = a5;
 		if(a6) {
-			this.InfoAlert();
+			this.infoAlert();
 		}
 	}
 	
@@ -619,7 +619,7 @@ class G13653FASBX35B1ZX3B54 {
 	}
 	
 	loadJS(_file) { //Loads a JS file.
-		document.write("<script src="+_file+";type=javascript></script>");
+		document.write("<script src=\""+_file+"\";type=javascript></script>");
 	}
 	
 	fromID(_str) { //alternate, easier spelling of document.getElementById
