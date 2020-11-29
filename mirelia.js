@@ -627,7 +627,7 @@ class G13653FASBX35B1ZX3B54 {
 	}
 	
 	include(_id, _file, _w, _h) { //includes HTML text of set width and height (works like a single-address framework).
-		document.write("<iframe id=\""+_id+"\";src=\""+_file+"\";width=\""+_w+"\";height=\""+_h+"\"></iframe>");
+		document.write("<iframe id=\""+_id+"\"; src=\""+_file+"\"; width=\""+_w+"\"; height=\""+_h+"\"></iframe>");
 	}
 	
 	reinclude(_id, _file) { //re-includes HTML text in an iframe.
