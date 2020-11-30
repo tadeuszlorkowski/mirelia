@@ -122,6 +122,8 @@ class G13653FASBX35B1ZX3B54 {
 		this.sNumber = 0;
 		this.aList = [];
 		this.aNumber = 0;
+		this.rsList = [];
+		this.rsNumber = 0;
 	}
 	//alert app info
 	infoAlert() {
@@ -350,9 +352,9 @@ class G13653FASBX35B1ZX3B54 {
 	//see if a sound is playing. It returns false if it had either paused or ended.
 	soundIsPlaying(_sndid) {
 		if(_sndid.paused || _sndid.ended)
-			return true;
-		else
 			return false;
+		else
+			return true;
 	}
 	
 	//see if a sound is looping
@@ -1465,6 +1467,20 @@ function __APPLICATIONLOOP(_nvdux9pvsivn9ucspuj) {
 				Mirelia.cList[i].background();
 			}
 			
+			for(i in Mirelia.rsList) {
+				if(!Mirelia.rsList[i].createEvt) {
+					Mirelia.rsList[i].created();
+					Mirelia.rsList[i].createEvt = true;
+				}
+				if(Mirelia.rsList[i].active) {
+					Mirelia.rsList[i].timer--;
+					if(Mirelia.rsList[i].timer <= 0) {
+						Mirelia.rsList[i].rs();
+						Mirelia.rsList[i].timer = Mirelia.rsList[i].interval;
+					}
+				}
+			}
+			
 		}
 		nigfopsgbkmjtgmb -= Mirelia.appSpeed;
 		if(v5b78oemunvcdsin > 0)
@@ -2018,4 +2034,118 @@ let Stem = new jge9rvndus9ejm0();
 function STEM() {
 	document.write("<div><iframe id=\"__STEM\"; src=\"\"; width=\"400px\"; height=\"400px\" style=\"border:none;\"></iframe></div>");
 	__APPLICATIONLOOP(0);
+}
+
+//MireliaRS alternate at some interval.
+class MireliaRS {
+	
+	//EVENTS
+	
+	created() {
+		//This will be executed on every instatiation. It is empty on default and is made to be overrided when a custom MireliaRS
+		//derivative is created.
+	}
+	
+	active() {
+		//This will be executed when the MireliaRS is active. It is empty on default and is made to be overrided when a custom MireliaRS
+		//derivative is created.
+	}
+	
+	unactive() {
+		//This will be executed when the MireliaRS is unactive. It is empty on default and is made to be overrided when a custom MireliaRS
+		//derivative is created.
+	}
+	
+	activated() {
+		//This will be executed when the MireliaRS is activated. It is empty on default and is made to be overrided when a custom MireliaRS
+		//derivative is created.
+	}
+	
+	deactivated() {
+		//This will be executed when the MireliaRS is deactivated. It is empty on default and is made to be overrided when a custom MireliaRS
+		//derivative is created.
+	}
+	
+	//Please do not override the constructor - it has many vital parameters in it. 
+	constructor(_function1, _function2, _params1, _params2) {
+		this.function1 = _function1;
+		this.function2 = _function2;
+		this.params1 = _params1;
+		this.params2 = _params2;
+		this.change = true;
+		this.active = true;
+		this.interval = 1;
+		this.timer = 1;
+		this.createEV = false;
+		Mirelia.rsNumber++;
+		
+		Mirelia.rsList.push(this);
+	}
+	
+	//Alters the entire RS
+	alter(_function1, _function2, _params1, _params2) {
+		this.function1 = _function1;
+		this.function2 = _function2;
+		this.params1 = _params1;
+		this.params2 = _params2;
+	}
+	
+	//Alters the functions/methods
+	alterFunctions(_function1, _function2) {
+		this.function1 = _function1;
+		this.function2 = _function2;
+	}
+	
+	//Alters the parameters
+	alterParams(_params1, _params2) {
+		this.params1 = _params1;
+		this.params2 = _params2;
+	}
+	
+	//executes the RS
+	rs() {
+		if(this.change) {
+			this.function1.apply(this.params1);
+			this.change = false;
+		} else {
+			this.function2.apply(this.params2);
+			this.change = true;
+		}
+	}
+	
+	//executes the RS, but w/o changing
+	rsStay() {
+		if(this.change) {
+			this.function1.apply(this.params1);
+		} else {
+			this.function2.apply(this.params2);
+		}
+	}
+	
+	//executes one function of the RS
+	rsOne(_fn) {
+		if(_fn) {
+			this.function1.apply(this.params1);
+		} else {
+			this.function2.apply(this.params2);
+		}
+	}
+	
+	//activates the RS
+	activate() {
+		this.activated();
+		this.active = true;
+	}
+	
+	//deactivates the RS
+	deactivate() {
+		this.deactivated();
+		this.active = false;
+	}
+	
+	//sets the interval (activates 60/interval times per second).
+	setInterval(_interval) {
+		this.interval = _interval;
+	}
+	
 }
