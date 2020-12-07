@@ -975,7 +975,7 @@ Returns none.
 This will start or stop playing the animation on HTML5 canvas.
 
 ```javascript
-animation.play(canvas, x, y, w, h, play, speed)
+animation.playStretched(canvas, x, y, w, h, play, speed)
 ```
 Parameter | Type | Description
 ------------ | ------------- | -------------
